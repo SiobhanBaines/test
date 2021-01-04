@@ -1,13 +1,17 @@
-let boxArray = document.getElementsByClassName('box');
-
 function boxClicked(){
-    for (let i =0; i < boxArray.length; i++){
-        console.log(boxArray[i].style.backgroundColor);
-    }
-
-    if (colour === 'green')
+    //let box = boxArray.style.backgroundColor;
+    console.log(this.style.backgroundColor);
+    if (this.style.backgroundColor == 'green')
     {
-        box.style.backgroundColor = 'orange';
+        this.style.backgroundColor = 'orange';
+    } else {
+        this.style.backgroundColor = 'green'
     }
 }
-boxArray.addEventListener('click', boxClicked);
+
+let box = document.getElementsByClassName('box');  
+
+for (let i=0; i < box.length; i++) {  
+   
+    box[i].addEventListener('click', boxClicked);
+}
